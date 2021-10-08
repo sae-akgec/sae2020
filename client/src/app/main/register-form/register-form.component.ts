@@ -13,7 +13,7 @@ export class RegisterFormComponent implements OnInit {
 
   form: FormGroup;
   isLoading: boolean;
-  branches = ['CSE', 'CS&IT', 'IT', 'CS', 'ECE', 'EN', 'EI', 'ME', 'CE'];
+  branches = ['CSE', 'CS', 'CSE(AIML)', 'CSE(DS)', 'CSIT', 'ECE', 'EN', 'EI', 'IT', 'ME', 'Civil'];
   name: FormControl;
   email: FormControl;
   phone_no: FormControl;
@@ -23,6 +23,7 @@ export class RegisterFormComponent implements OnInit {
   roll_no: FormControl;
   gender: FormControl;
   domain: FormControl;
+  section: FormControl;
 
   constructor(private _snackBar: MatSnackBar, private router: Router, private http: HttpClient) {
   }
@@ -35,8 +36,9 @@ export class RegisterFormComponent implements OnInit {
     this.branch = new FormControl(null, [Validators.required]);
     this.student_no = new FormControl(1810171);
     this.roll_no = new FormControl(null, [Validators.required, Validators.pattern(`^[0-9]*$`)]);
-    this.gender = new FormControl('male');
-    this.domain = new FormControl('nothing');
+    this.gender = new FormControl('Male');
+    this.domain = new FormControl('Innovation');
+    this.section = new FormControl('ME-3');
     this.form = new FormGroup({
       name: this.name,
       email: this.email,
@@ -47,6 +49,7 @@ export class RegisterFormComponent implements OnInit {
       roll_no: this.roll_no,
       domain: this.domain,
       gender: this.gender,
+      section: this.section,
     });
   }
 

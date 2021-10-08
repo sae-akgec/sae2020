@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'main-home-header',
@@ -16,9 +17,13 @@ export class HomeHeaderComponent implements OnInit {
    transform: number;
    selectedIndex = 0;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigateToRegister() {
+    this.router.navigateByUrl('/register');
   }
 
   selected(x) {

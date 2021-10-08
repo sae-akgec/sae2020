@@ -32,7 +32,7 @@
                             <mat-label>Student Number</mat-label>
                             <mat-icon matPrefix>portrait</mat-icon>
                             <input matInput type="number" formControlName="student_no" [formControl]="student_no">
-                            <mat-hint>Eg. 19XXXXX</mat-hint>
+                            <mat-hint>Eg. 20XXXXX</mat-hint>
                             <mat-error [hidden]="!student_no.errors?.required">Required Field</mat-error>
                             <mat-error *ngIf="!student_no.errors?.required" [hidden]="!student_no.errors">Enter a
                                 valid
@@ -45,7 +45,7 @@
                             <mat-icon matPrefix>school</mat-icon>
                             <input type="number" matInput placeholder="Roll Number" formControlName="roll_no"
                                 [formControl]="roll_no" autocomplete="off">
-                            <mat-hint>Eg. 19XXXXXXX</mat-hint>
+                            <mat-hint>Eg. 20XXXXXXX</mat-hint>
                             <mat-error [hidden]="!roll_no.errors?.required">Required Field</mat-error>
                             <mat-error *ngIf="!roll_no.errors?.required" [hidden]="!roll_no.errors">Enter a valid
                                 Roll number
