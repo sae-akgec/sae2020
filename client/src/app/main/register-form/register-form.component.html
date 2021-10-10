@@ -6,11 +6,11 @@
             </div>
             <div class="col-lg-7 col-sm-12 background">
                 <form [formGroup]="form" class="form-card" (submit)="submit()">
-                    <div class="register-heading">
+                    <!-- <div class="register-heading">
                         <img src="assets/logo1.png" alt="logo" class="logo1">
                         <p class="text-center small">Recruitment</p>
-                        <!--            <h2>SAE-2021</h2>-->
-                    </div>
+                                   <h2>SAE-2021</h2>
+                    </div> -->
                     <div class="form-container">
                         <mat-form-field appearance="legacy">
                             <mat-label>Name</mat-label>
@@ -89,6 +89,16 @@
                                 [formControl]="skills" autocomplete="off">
                             <!--              <mat-hint>Eg. HTML, CSS, ....</mat-hint>-->
                             <mat-error [hidden]="!skills.errors?.required">Required Field</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="legacy">
+                            <mat-label>Domain</mat-label>
+                            <mat-icon matPrefix>engineering</mat-icon>
+                            <mat-select placeholder="Domain" [formControl]="domain">
+                                <mat-option *ngFor="let domain of domains" [value]="domain">
+                                    {{domain}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error [hidden]="!branch.errors?.required">Required Field</mat-error>
                         </mat-form-field>
                     </div>
                     <div style="margin: 20px; display: flex; justify-content: center">

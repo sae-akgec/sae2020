@@ -22,6 +22,7 @@ export class RegisterFormComponent implements OnInit {
   student_no: FormControl;
   roll_no: FormControl;
   gender: FormControl;
+  domains = ['Innovation', 'Mechenical', 'Media'];
   domain: FormControl;
   section: FormControl;
 
@@ -34,10 +35,10 @@ export class RegisterFormComponent implements OnInit {
     this.phone_no = new FormControl(null, [Validators.required, Validators.pattern(`^[0-9]*$`)]);
     this.skills = new FormControl(null, [Validators.required]);
     this.branch = new FormControl(null, [Validators.required]);
-    this.student_no = new FormControl(1810171);
+    this.student_no = new FormControl(null);
     this.roll_no = new FormControl(null, [Validators.required, Validators.pattern(`^[0-9]*$`)]);
     this.gender = new FormControl('Male');
-    this.domain = new FormControl('Innovation');
+    this.domain = new FormControl(null, [Validators.required]);
     this.section = new FormControl('ME-3');
     this.form = new FormGroup({
       name: this.name,
@@ -77,7 +78,7 @@ export class RegisterFormComponent implements OnInit {
         this._snackBar.open('Successfully Registered', 'Close', {
         duration: 2000,
         horizontalPosition: 'center',
-        verticalPosition: 'top',
+        verticalPosition: 'bottom',
         panelClass: ['success']
       });
         this.isLoading = false;

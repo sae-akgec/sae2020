@@ -32,6 +32,7 @@ span {
 }
 
 .form-container {
+  margin-top: 15%;
   text-align: center;
   width: 100%;
 }
@@ -206,4 +207,12 @@ mat-card {
   //justify-content: center;
   //justify-items: center;
   //align-items: center;
+}
+.submit-button {
+  button{
+    padding: 10px 30px !important; 
+    border-radius: 4px;
+    background-color: #1d1d1d;
+    color: #ffffff;
+  }
 }
